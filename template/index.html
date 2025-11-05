@@ -7,7 +7,53 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h1>Timer and Countdown</h1>
+<div class="container">
+  <h1>Timer and Countdown</h1>
+  
+  <!-- Mode Selector -->
+  <div class="mode-selector" role="tablist">
+    <button class="mode-btn" id="mode-stopwatch" role="tab" aria-selected="true" aria-controls="stopwatch-panel">Stopwatch</button>
+    <button class="mode-btn" id="mode-countdown" role="tab" aria-selected="false" aria-controls="countdown-panel">Countdown</button>
+  </div>
+
+  <!-- Shared Timer Display -->
+  <div class="timer-display" aria-live="polite" aria-atomic="true">
+    <div class="timer-text" id="timer-display">00:00:00.000</div>
+  </div>
+
+  <!-- Stopwatch Panel -->
+  <div id="stopwatch-panel" class="panel active" role="tabpanel">
+    <div class="controls">
+      <button class="btn btn-primary" id="btn-start-stopwatch" aria-label="Start stopwatch">Start</button>
+      <button class="btn btn-secondary" id="btn-clear-stopwatch" aria-label="Clear stopwatch">Clear</button>
+    </div>
+  </div>
+
+  <!-- Countdown Panel -->
+  <div id="countdown-panel" class="panel" role="tabpanel" hidden>
+    <div class="keypad-container">
+      <div class="keypad" id="countdown-keypad">
+        <button class="keypad-btn" data-digit="1">1</button>
+        <button class="keypad-btn" data-digit="2">2</button>
+        <button class="keypad-btn" data-digit="3">3</button>
+        <button class="keypad-btn" data-digit="4">4</button>
+        <button class="keypad-btn" data-digit="5">5</button>
+        <button class="keypad-btn" data-digit="6">6</button>
+        <button class="keypad-btn" data-digit="7">7</button>
+        <button class="keypad-btn" data-digit="8">8</button>
+        <button class="keypad-btn" data-digit="9">9</button>
+        <button class="keypad-btn" data-digit="0">0</button>
+      </div>
+      <div class="keypad-actions">
+        <button class="btn btn-primary" id="btn-set-countdown" aria-label="Set countdown time">Set</button>
+        <button class="btn btn-secondary" id="btn-clear-countdown" aria-label="Clear countdown">Clear</button>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="btn btn-primary" id="btn-start-countdown" aria-label="Start countdown" disabled>Start</button>
+    </div>
+  </div>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
